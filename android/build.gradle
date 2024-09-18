@@ -9,9 +9,8 @@ buildscript {
             url 'https://google.bintray.com/exoplayer/'
         }
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:8.6.1'
     }
 }
 
@@ -24,11 +23,10 @@ rootProject.allprojects {
         }
     }
 }
-
 apply plugin: 'com.android.library'
-
 android {
-    compileSdkVersion 29
+    namespace 'com.example.screen_lock_check'
+    compileSdk 34
 
     defaultConfig {
         minSdkVersion 16
