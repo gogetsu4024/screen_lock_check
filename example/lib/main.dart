@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isScreenLockEnabled;
+  bool? _isScreenLockEnabled;
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    bool isScreenLockEnabled;
+    bool? isScreenLockEnabled;
 
     try {
       isScreenLockEnabled = await ScreenLockCheck().isScreenLockEnabled;
@@ -62,12 +62,12 @@ class _MyAppState extends State<MyApp> {
 
 class AppLifecycleEventHandler extends StatefulWidget {
   final Widget child;
-  final ValueSetter setIsScreenLockEnabled;
+  final ValueSetter<bool?> setIsScreenLockEnabled;
 
   const AppLifecycleEventHandler({
-    @required this.child,
-    @required this.setIsScreenLockEnabled,
-    Key key,
+    required this.child,
+    required this.setIsScreenLockEnabled,
+    Key? key,
   }) : super(key: key);
 
   @override
